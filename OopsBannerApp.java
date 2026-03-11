@@ -2,7 +2,7 @@ public class OopsBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(" OOP");
+        System.out.println(" OOPS");
 
     }
 }
