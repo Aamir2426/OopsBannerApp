@@ -2,58 +2,53 @@ public class OopsBannerApp {
 
 public static void main(String[] args) {
 
+        // Create array to store banner lines
         String[] banner = {
 
-            // Line 1
-            String.join("   ",
+            String.join(" ",
                     " ***** ",
                     " ***** ",
                     " ******",
                     " ***** "),
 
-            // Line 2
-            String.join("   ",
+            String.join(" ",
                     "*     *",
                     "*     *",
                     "*     *",
                     "*      "),
 
-            // Line 3
-            String.join("   ",
+            String.join(" ",
                     "*     *",
                     "*     *",
                     "*     *",
                     "*      "),
 
-            // Line 4
-            String.join("   ",
+            String.join(" ",
                     "*     *",
                     "*     *",
                     " ******",
                     " ***** "),
 
-            // Line 5
-            String.join("   ",
+            String.join(" ",
                     "*     *",
                     "*     *",
                     "*      ",
-                    "      *"),
+                    "     * "),
 
-            // Line 6
-            String.join("   ",
+            String.join(" ",
                     "*     *",
                     "*     *",
                     "*      ",
-                    "*     *"),
+                    "*    * "),
 
-            // Line 7
-            String.join("   ",
+            String.join(" ",
                     " ***** ",
                     " ***** ",
                     "*      ",
                     " ***** ")
         };
 
+        // Print using enhanced for-loop
         for (String line : banner) {
             System.out.println(line);
         }
