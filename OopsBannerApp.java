@@ -1,26 +1,38 @@
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class OopsBannerApp {
 
+    
+    public static void printBanner(String word, Map<Character, String[]> patterns) {
 
-    static class CharacterPattern {
-        char ch;
-        String[] pattern;
+        int height = 5;
 
-        
-        CharacterPattern(char ch, String[] pattern) {
-            this.ch = ch;
-            this.pattern = pattern;
-        }
+        for (int i = 0; i < height; i++) {
 
-        
-        String[] getPattern() {
-            return pattern;
+            StringBuilder line = new StringBuilder();
+
+            for (char ch : word.toCharArray()) {
+
+                String[] pattern = patterns.get(ch);
+
+                if (pattern != null) {
+                    line.append(pattern[i]).append("  ");
+                }
+            }
+
+            System.out.println(line);
         }
     }
 
     public static void main(String[] args) {
 
         
-        CharacterPattern O = new CharacterPattern('O', new String[]{
+        Map<Character, String[]> patternMap = new HashMap<>();
+
+        
+        patternMap.put('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -29,7 +41,7 @@ public class OopsBannerApp {
         });
 
         
-        CharacterPattern P = new CharacterPattern('P', new String[]{
+        patternMap.put('P', new String[]{
                 "****** ",
                 "*     *",
                 "****** ",
@@ -38,7 +50,7 @@ public class OopsBannerApp {
         });
 
         
-        CharacterPattern S = new CharacterPattern('S', new String[]{
+        patternMap.put('S', new String[]{
                 " ***** ",
                 "*      ",
                 " ***** ",
@@ -47,18 +59,9 @@ public class OopsBannerApp {
         });
 
         
-        CharacterPattern[] banner = {O, O, P, S};
+        String word = "OOPS";
 
         
-        for (int i = 0; i < 5; i++) {
-
-            StringBuilder line = new StringBuilder();
-
-            for (CharacterPattern c : banner) {
-                line.append(c.getPattern()[i]).append("  ");
-            }
-
-            System.out.println(line);
-        }
+        printBanner(word, patternMap);
     }
 }
